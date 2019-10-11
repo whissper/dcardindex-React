@@ -1,0 +1,10 @@
+.sav2-object-li .badge {
+    display: inline-block;
+	padding: 2px 6px 3px;
+	line-height: normal;
+	vertical-align: middle;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 150px;
+	cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.sav2-lb-sm {
+    font-size: .875rem;
+}
+
+@media (max-width: 576px) { 
+    .sav2-stomach-select {
+        margin-bottom: 1rem;
+    }
+}
