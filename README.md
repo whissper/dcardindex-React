@@ -1,2 +1,2 @@
 # dcardindex-React
-dcard index frontend development (React)
+dcard index frontend development project (React)
