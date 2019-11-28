@@ -81,7 +81,9 @@ function Paginator(props) {
              * 
              * i.e. numberOfPages - (2 * offset)
              */
-                return numberOfPages - (2 * offset);
+                //return numberOfPages - (2 * offset);
+                const startItemValue = numberOfPages - (2 * offset);
+                return (startItemValue > 0 ? startItemValue : 1);
             } else { 
                 return curPage - offset;
             }
