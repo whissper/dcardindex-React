@@ -3,7 +3,7 @@ import './Menu.css';
 import { Row, Col, InputGroup, FormControl, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserMd, faAddressCard } from '@fortawesome/free-solid-svg-icons';
-import MainDoctorPanelDispatch from 'App/Utils/MainDoctorPanelDispatch';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 
 function Menu(props) {
 

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './Search.css';
 import { Row } from 'react-bootstrap';
 import SearchItem from './SearchItem';
-import MainDoctorPanelDispatch from 'App/Utils/MainDoctorPanelDispatch';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 
 
 function Search(props) {

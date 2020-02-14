@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import './MainMenu.css';
 import { Row, Col, Button, ButtonGroup } from 'react-bootstrap';
 import fetchData from 'App/Utils/fetchData';
-import AppDispatch from 'App/Utils/AppDispatch';
-import MainDoctorPanelDispatch from 'App/Utils/MainDoctorPanelDispatch';
+import { AppDispatch } from 'App/Utils/useAppReducer';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 import processException from 'App/Utils/processException';
 //import { AppDispatch } from 'App';
 

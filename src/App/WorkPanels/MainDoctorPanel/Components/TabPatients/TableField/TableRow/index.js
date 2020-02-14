@@ -3,7 +3,7 @@ import './TableRow.css';
 import { OverlayTrigger, Tooltip, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faFileMedical, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import MainDoctorPanelDispatch from 'App/Utils/MainDoctorPanelDispatch';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 
 
 function TableRow(props) {

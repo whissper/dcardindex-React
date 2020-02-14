@@ -36,7 +36,7 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import cardFields from 'App/Utils/cardFields';
 import Inputmask from 'inputmask';
-import MainDoctorPanelDispatch from 'App/Utils/MainDoctorPanelDispatch';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 
 
 function ChosenCardForm(props) {

@@ -4,8 +4,8 @@ import { OverlayTrigger, Tooltip, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileWord } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt, faClipboard } from '@fortawesome/free-regular-svg-icons';
-import AppDispatch from 'App/Utils/AppDispatch';
-import MainDoctorPanelDispatch from 'App/Utils/MainDoctorPanelDispatch';
+import { AppDispatch } from 'App/Utils/useAppReducer';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 import fetchData from 'App/Utils/fetchData';
 import processException from 'App/Utils/processException';
 

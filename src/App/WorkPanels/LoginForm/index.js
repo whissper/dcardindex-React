@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import './LoginForm.css';
 import { Row, Col, Form, Button } from 'react-bootstrap';
 import fetchData from 'App/Utils/fetchData';
-import AppDispatch from 'App/Utils/AppDispatch';
+import { AppDispatch } from 'App/Utils/useAppReducer';
 import processException from 'App/Utils/processException';
 //import { AppDispatch } from 'App';
 

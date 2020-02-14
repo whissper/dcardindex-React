@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './TabPatients.css';
 import Menu from './Menu';
 import Search from './Search';
@@ -8,9 +8,12 @@ import TableField from './TableField';
 import InsertPatientModal from './InsertPatientModal';
 import InsertCardModal from './InsertCardModal';
 import UpdatePatientModal from './UpdatePatientModal';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 
 
 function TabPatients(props) {
+
+    const mainDoctorPanelDispatch = useContext(MainDoctorPanelDispatch);
 
     const {
         panelData,
@@ -21,6 +24,13 @@ function TabPatients(props) {
         patientsData,
         patientsSearchFieldsData
     } = props;
+
+    const handleItemClick = (pageNumber) => {
+        mainDoctorPanelDispatch({
+            type: 'setPaginators',
+            paginators: { tabPatientsPage: pageNumber }
+        });
+    };
     
     return (
         <React.Fragment>
@@ -32,12 +42,22 @@ function TabPatients(props) {
             <hr />
             <Paginator curPage={paginatorData}
                 perPage={patientsData.perpage}
-                countRows={patientsData.countrows} />
+                countRows={patientsData.countrows}
+                onItemClick={handleItemClick}
+                onPrevClick={handleItemClick}
+                onNextClick={handleItemClick}
+                onFirstClick={handleItemClick}
+                onLastClick={handleItemClick} />
             <TableField rowItems={patientsData.rowitems} />
             <hr />
             <Paginator curPage={paginatorData}
                 perPage={patientsData.perpage}
-                countRows={patientsData.countrows} />
+                countRows={patientsData.countrows}
+                onItemClick={handleItemClick}
+                onPrevClick={handleItemClick}
+                onNextClick={handleItemClick}
+                onFirstClick={handleItemClick}
+                onLastClick={handleItemClick} />
             <br />
             <br />
             <InsertPatientModal data={insertPatientModalData} />

@@ -4,8 +4,8 @@ import { Modal, Button } from 'react-bootstrap';
 import fetchData from 'App/Utils/fetchData';
 import processException from 'App/Utils/processException';
 import makeFixedFormat from 'App/Utils/makeFixedFormat';
-import AppDispatch from 'App/Utils/AppDispatch';
-import MainDoctorPanelDispatch from 'App/Utils/MainDoctorPanelDispatch';
+import { AppDispatch } from 'App/Utils/useAppReducer';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 
 
 function DeleteCardModal(props) {

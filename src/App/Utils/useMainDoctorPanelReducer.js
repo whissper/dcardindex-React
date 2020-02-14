@@ -1,4 +1,6 @@
-import { useReducer } from 'react';
+import React, { useReducer } from 'react';
+
+const MainDoctorPanelDispatch = React.createContext(null);
 
 function reducer(state, action) {
     switch (action.type) {
@@ -135,3 +137,4 @@ function useMainDoctorPanelReducer(initialState) {
 }
 
 export default useMainDoctorPanelReducer;
+export { MainDoctorPanelDispatch };

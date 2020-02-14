@@ -1,4 +1,6 @@
-import {useReducer} from 'react';
+import React, {useReducer} from 'react';
+
+const AppDispatch = React.createContext(null);
 
 function reducer(state, action) {
     switch (action.type) {
@@ -19,3 +21,4 @@ function useAppReducer(initialState) {
 }
 
 export default useAppReducer;
+export { AppDispatch }; 

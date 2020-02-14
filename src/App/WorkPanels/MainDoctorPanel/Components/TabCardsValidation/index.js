@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './TabCardsValidation.css';
 import Menu from './Menu';
 import TableInfo from './TableInfo';
-import Paginator from './Paginator';
+import Paginator from 'App/WorkPanels/MainDoctorPanel/Components/TabPatients/Paginator';
 import TableField from './TableField';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 
 
 function TabCardsValidation(props) {
+
+    const mainDoctorPanelDispatch = useContext(MainDoctorPanelDispatch);
 
     const {
         panelData,
@@ -14,6 +17,13 @@ function TabCardsValidation(props) {
         paginatorData,
     } = props;
     
+    const handleItemClick = (pageNumber) => {
+        mainDoctorPanelDispatch({
+            type: 'setPaginators',
+            paginators: { tabCardsValidationPage: pageNumber }
+        });
+    };
+
     return (
         <React.Fragment>
             <Menu data={panelData} />
@@ -22,12 +32,22 @@ function TabCardsValidation(props) {
             <hr />
             <Paginator curPage={paginatorData}
                 perPage={cardsValidationData.perpage}
-                countRows={cardsValidationData.countrows} />
+                countRows={cardsValidationData.countrows}
+                onItemClick={handleItemClick}
+                onPrevClick={handleItemClick}
+                onNextClick={handleItemClick}
+                onFirstClick={handleItemClick}
+                onLastClick={handleItemClick} />
             <TableField rowItems={cardsValidationData.rowitems} />           
             <hr />
             <Paginator curPage={paginatorData}
                 perPage={cardsValidationData.perpage}
-                countRows={cardsValidationData.countrows} />
+                countRows={cardsValidationData.countrows}
+                onItemClick={handleItemClick}
+                onPrevClick={handleItemClick}
+                onNextClick={handleItemClick}
+                onFirstClick={handleItemClick}
+                onLastClick={handleItemClick} />
             <br />
             <br />
         </React.Fragment>

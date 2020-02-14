@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './TabUsers.css';
 import Menu from './Menu';
 import InsertUserModal from './InsertUserModal';
 import Search from './Search';
 import TableInfo from './TableInfo';
-import Paginator from './Paginator';
+import Paginator from 'App/WorkPanels/MainDoctorPanel/Components/TabPatients/Paginator';
 import TableField from './TableField';
 import LockUserModal from './LockUserModal';
 import UpdateUserModal from './UpdateUserModal';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 
 
 function TabUsers(props) {
+
+    const mainDoctorPanelDispatch = useContext(MainDoctorPanelDispatch);
 
     const {
         panelData,
@@ -21,6 +24,13 @@ function TabUsers(props) {
         lockUserModalData,
         updateUserModalData
     } = props;
+
+    const handleItemClick = (pageNumber) => {
+        mainDoctorPanelDispatch({
+            type: 'setPaginators',
+            paginators: { tabUsersPage: pageNumber }
+        });
+    };
     
     return (
         <React.Fragment>
@@ -32,12 +42,22 @@ function TabUsers(props) {
             <hr />
             <Paginator curPage={paginatorData}
                 perPage={usersData.perpage}
-                countRows={usersData.countrows} />
+                countRows={usersData.countrows}
+                onItemClick={handleItemClick}
+                onPrevClick={handleItemClick}
+                onNextClick={handleItemClick}
+                onFirstClick={handleItemClick}
+                onLastClick={handleItemClick} />
             <TableField rowItems={usersData.rowitems} />           
             <hr />
             <Paginator curPage={paginatorData}
                 perPage={usersData.perpage}
-                countRows={usersData.countrows} />
+                countRows={usersData.countrows}
+                onItemClick={handleItemClick}
+                onPrevClick={handleItemClick}
+                onNextClick={handleItemClick}
+                onFirstClick={handleItemClick}
+                onLastClick={handleItemClick} />
             <br />
             <br />
             <InsertUserModal data={insertUserModalData} />

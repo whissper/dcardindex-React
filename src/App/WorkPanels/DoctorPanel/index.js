@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import './DoctorPanel.css';
-import MainDoctorPanelDispatch from 'App/Utils/MainDoctorPanelDispatch';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 import useMainDoctorPanelReducer from 'App/Utils/useMainDoctorPanelReducer';
 import MainMenu from './Components/MainMenu';
 import InfoBox from 'App/WorkPanels/MainDoctorPanel/Components/InfoBox';
@@ -10,7 +10,7 @@ import TabChosenCard from 'App/WorkPanels/MainDoctorPanel/Components/TabChosenCa
 import PrintForm from 'App/WorkPanels/MainDoctorPanel/Components/PrintForm';
 import fetchData from 'App/Utils/fetchData';
 import processException from 'App/Utils/processException';
-import AppDispatch from 'App/Utils/AppDispatch';
+import { AppDispatch } from 'App/Utils/useAppReducer';
 
 function DoctorPanel(props) {
 

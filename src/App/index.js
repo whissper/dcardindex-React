@@ -4,7 +4,7 @@ import TopHeader from 'App/TopHeader';
 import Workspace from 'App/Workspace';
 import LightCover from 'App/LightCover';
 import fetchData from 'App/Utils/fetchData';
-import AppDispatch from 'App/Utils/AppDispatch';
+import { AppDispatch } from 'App/Utils/useAppReducer';
 import useAppReducer from 'App/Utils/useAppReducer';
 import processException from 'App/Utils/processException';
 

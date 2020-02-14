@@ -1,13 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './Paginator.css';
 import { Pagination } from 'react-bootstrap';
-import MainDoctorPanelDispatch from 'App/Utils/MainDoctorPanelDispatch';
 
 function Paginator(props) {
-
-    const mainDoctorPanelDispatch = useContext(MainDoctorPanelDispatch);
     
-    const { curPage, perPage, countRows } = props;
+    const { 
+        curPage, 
+        perPage, 
+        countRows,
+        onItemClick,
+        onPrevClick,
+        onNextClick,
+        onFirstClick,
+        onLastClick 
+    } = props;
 
     const amoutOfItems = 7;
 
@@ -17,38 +23,25 @@ function Paginator(props) {
     
     const itemClick = (e) => {
         const pageValue = e.target.attributes.pagenum.value
-        mainDoctorPanelDispatch({
-            type: 'setPaginators',
-            paginators: { tabPatientsPage: parseInt(pageValue) }
-        });
+        onItemClick(parseInt(pageValue));
     };
 
     const prevClick = () => {
-        mainDoctorPanelDispatch({
-            type: 'setPaginators',
-            paginators: { tabPatientsPage: (curPage - 1 < 1) ? 1 : curPage - 1 }
-        });
+        const pageNumber = (curPage - 1 < 1) ? 1 : curPage - 1;
+        onPrevClick(pageNumber);
     };
 
     const nextClick = () => {
-        mainDoctorPanelDispatch({
-            type: 'setPaginators',
-            paginators: { tabPatientsPage: ((curPage + 1) > numberOfPages) ? numberOfPages : curPage + 1 }
-        });
+        const pageNumber = ((curPage + 1) > numberOfPages) ? numberOfPages : curPage + 1;
+        onNextClick(pageNumber);
     };
     
     const firstClick = () => {
-        mainDoctorPanelDispatch({
-            type: 'setPaginators',
-            paginators: { tabPatientsPage: 1 }
-        });
+        onFirstClick(1);
     };
 
     const lastClick = () => {
-        mainDoctorPanelDispatch({
-            type: 'setPaginators',
-            paginators: { tabPatientsPage: numberOfPages }
-        });
+        onLastClick(numberOfPages);
     };
 
     let items = [];

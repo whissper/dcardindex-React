@@ -4,7 +4,7 @@ import { Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import fetchData from 'App/Utils/fetchData';
-import AppDispatch from 'App/Utils/AppDispatch';
+import { AppDispatch } from 'App/Utils/useAppReducer';
 import processException from 'App/Utils/processException';
 //import { AppDispatch } from 'App';
 

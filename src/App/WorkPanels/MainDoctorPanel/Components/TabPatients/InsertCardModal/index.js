@@ -1,9 +1,9 @@
 import React, { useContext, useRef, useEffect } from 'react';
 import './InsertCardModal.css';
 import { Modal, Button, Form } from 'react-bootstrap';
-import MainDoctorPanelDispatch from 'App/Utils/MainDoctorPanelDispatch';
+import { MainDoctorPanelDispatch } from 'App/Utils/useMainDoctorPanelReducer';
 import fetchData from 'App/Utils/fetchData';
-import AppDispatch from 'App/Utils/AppDispatch';
+import { AppDispatch } from 'App/Utils/useAppReducer';
 import processException from 'App/Utils/processException';
 import makeFixedFormat from 'App/Utils/makeFixedFormat';
 
